@@ -1,0 +1,15 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "node server for chatrush web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js -e hbs,js,html"
+  },
+  "author": "harsh sawant",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^4.7.5"
+  }
+}

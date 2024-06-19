@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Rush</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="/favicon.ico" type="chatrush.png">
+    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+
+</head>
+
+<body>
+    <audio id="sound" src="linked_in_in_connet.mp3" preload="auto"></audio>
+    <a id="home_scroll"></a>
+    <section>
+        <nav class="navbar navbar-expand-lg" style="background-color: #0e1318;">
+            <div class="container">
+                <a class="navbar-brand" href=""><img alt="Free Frontend Logo" class="img-fluid" height=""
+                        src="https://cdn-icons-png.flaticon.com/128/892/892177.png" width="50px"></a> <button
+                    aria-controls="navbarSupportedContent10" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-bs-target="#navbarSupportedContent10" data-bs-toggle="collapse"
+                    type="button"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent10">
+                    <ul class="navbar-nav mx-auto my-2 my-lg-0">
+                        <li class="nav-item d-flex align-items-center me-4">
+                            <a class="nav-link" href="#about_scroll"><svg class="bi bi-info-circle me-1"
+                                    fill="currentColor" height="24" viewbox="0 0 16 16" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z">
+                                    </path>
+                                    <path
+                                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                                    </path>
+                                </svg> About</a>
+                        </li>
+
+                        </li>
+                        <li class="nav-item d-flex align-items-center me-4">
+                            <a class="nav-link" id="register_section" href="#register_scroll"><svg class="bi bi-person-lines-fill me-1"
+                                    fill="currentColor" height="24" viewbox="0 0 16 16" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z">
+                                    </path>
+                                </svg> Register</a>
+                        </li>
+                    </ul><a class="btn btn-primary mb-2 mb-lg-0" href="#chat_scroll">Chat Now</a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+
+    <!-- Main Banner -->
+    <section class="parallax">
+
+    </section>
+
+
+    <!-- Chat Section -->
+    <a id="chat_scroll"></a>
+
+    <section style="background-color: #0e1318;">
+        <div class="container py-5">
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+
+                    <h5 class="font-weight-bold mb-3 text-center text-lg-start text-white">Members</h5>
+
+
+
+                    <div class="card">
+                        <div class="card-body">
+
+                            <ul class="list-unstyled mb-0">
+
+                                <ul id="user-list" class="list-unstyled mb-0">
+                                </ul>
+
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-7 col-xl-8">
+
+                    <ul class="list-unstyled">
+
+                        <div id="msgContainer">
+
+
+                        </div>
+
+                        <div class="container" id="chat-container">
+                            <h1 class="text-center">Chat Application</h1>
+                            <ul id="msgContainer" class="list-unstyled">
+                            </ul>
+                            <form id="chat-form" class="form-inline">
+                                <input type="text" id="msg" class="form-control mr-2" placeholder="Enter message"
+                                    required>
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </form>
+
+                        </div>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <a id="about_scroll"></a>
+    <section class="section1">
+        <section class="py-5">
+            <div class="container">
+                <div class="row gx-4 align-items-center">
+                    <div class="col-md-6 order-2 order-lg-1">
+                        <div class="me-md-2 me-lg-5 text-center mt-5 mt-md-0">
+                            <span class="text-muted">Our Story</span>
+                            <h2 class="display-5 fw-bold">About Us</h2>
+                            <p class="lead">Welcome to ChatRush Our platform makes it easy for you to join the
+                                conversation – just enter your name and start chatting with people online in a single,
+                                lively chat room</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-lg-2">
+                        <div class="ms-md-2 ms-lg-5"><img class="img-fluid rounded-3"
+                                src="https://img.freepik.com/premium-photo/social-media-network-concept-with-diverse-characters-engaging-via-mobile-devices_388444-6026.jpg?w=740">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+
+    <a id="register_scroll"></a>
+    <section class="section2">
+        <div class="blurred-background">
+            <h2>" kindly provide your name "</h2>
+            <input type="text" class="input-field" id="nameInput">
+            <button type="submit" class="btn-success mt-2 p-2"
+                style="font-family:'Rubik';  font-weight: 500; font-size:large;" id="btn_name"><a
+                    href="#chat_scroll">Let's Chat</a></button>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer style="background-color: #0e1318; color: white; padding: 20px 0;">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About ChatRush</h5>
+                    <p>ChatRush is your go-to platform for seamless online conversations. Join the chat and connect with
+                        people from around the world!</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home_scroll" style="color: #009c95;">Home</a></li>
+                        <li><a href="#about_scroll" style="color: #009c95;">About</a></li>
+                        <li><a href="#register_scroll" style="color: #009c95;">Register</a></li>
+                        <li><a href="#chat_scroll" style="color: #009c95;">Chat Now</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@chatrush.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <div>
+
+                        <a href="https://www.instagram.com/18.harsh?utm_source=qr&igsh=MW1wOXdlcG53bTRzdg%3D%3D"
+                            target="_blank" style="color: #009c95; margin-right: 15px;"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/harsh-sawant-260646255/" target="_blank"
+                            style="color: #009c95;"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255, 255, 255, 0.1);">
+            <p>&copy; 2024 ChatRush- Created by Harsh Sawant &hearts;</p>
+        </div>
+    </footer>
+
+    <!-- Add Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        const socket = io('http://localhost:8000');
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+
+        document.getElementById('nameInput').addEventListener('keydown', function (event) {
+            if (event.key === ' ' || event.key === '1' || event.key === '2' || event.key === '3' || event.key === '4' || event.key === '5' || event.key === '6' || event.key === '7' || event.key === '8' || event.key === '9' || event.key === '0' || event.key === '-' || event.key === '+' || event.key === '.' || event.key === '?' || event.key === '<' || event.key === '>' || event.key === ',' || event.key === ';' || event.key === '"' || event.key === '/' || event.key === '|' || event.key === '\\' || event.key === '@' || event.key === '#' || event.key === '$' || event.key === '^' || event.key === '&' || event.key === '*' || event.key === '(' || event.key === ')' || event.key === '-' || event.key === '4' || event.key === '=' || event.key === '!' || event.key === '%' || event.key === ':' || event.key === '~' || event.key === '`' || event.key === "'") {
+                event.preventDefault();
+            }
+        });
+
+        document.getElementById('btn_name').addEventListener('click', function (event) {
+
+            var user_name = document.getElementById('nameInput').value;
+
+            socket.emit('new-user-joined', user_name);
+
+
+            document.getElementById('btn_name').ariaDisabled
+        });
+        
+    </script>
+
+
+</body>
+
+</html>

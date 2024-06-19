@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+#msg,
+input {
+    width: 100%;
+    height: 6vh;
+    border: 2px solid rgb(177, 236, 248);
+    border-radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section1,
+.section2,
+.parallax {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+.parallax {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)), url("https://img.freepik.com/free-photo/digital-connection-technology-social-media_53876-124327.jpg?t=st=1717441148~exp=1717444748~hmac=59fa1600b2aeec047272c37cd9d4bda0a6a23457532508c2eb3b039b8180eaf6&w=1380");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.section1 {
+    background-color: #ff4d4d;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)), url("https://wallpaperaccess.com/full/310778.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.section2 {
+    background-color: #ff4d4d;
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/65eed0145888897.62a755083fe34.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+a {
+    color: #009c95;
+}
+
+.blurred-background {
+    background-color: rgb(0 156 149);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -264px;
+}
+
+.input-field {
+    background-color: #fffffff0;
+    padding: 5px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-success {
+    border-radius: 10px;
+    background-color: #71f1b2;
+    color: rgb(7, 95, 158);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background-color: rgb(61, 59, 197);
+}
+
+.message {
+    margin-bottom: 15px;
+}
+
+.message.left {
+    text-align: left;
+}
+
+.message.right {
+    text-align: right;
+}
